@@ -1,0 +1,28 @@
+Ada Boosting
+
+    Combines Stumps with different weights to make classifications
+        - Stumps can only use one variable to make a decisions
+        - each stump takes previos stumps mistakes into account
+    Total_Error of a Stump:
+        Total_Error = The sum of the weights for the incorrectly classified samples
+    Amount of Say stump has in final classification:
+        Amount_of_Say = (1/2)*log((1-Total_Error)/Total_Error)
+        Note* Total_Error can not be 1 or 0 so small error added to it
+    Increasing weight for incorrectly classified examples:
+        emphasize the need to classified this sample correctly
+        new_sample_weight = sample_weight * e^(Amount_of_Say)
+    Decrease weight for all correctly classified examples:
+        new_sample_weight = sample_weight * e^(-Amount_of_Say)
+    Normalize new_sample_weights to add up to one:
+        sum up the unnormalized weights and divide each unnormalized weight by the sum
+    Use weighted Gini Index to put more emphasis on correctly classifying largest Sample weight
+        or use random number to make new samples based on sample weights
+        and set the new samples to have all the same weight
+    Sum up Amount_of_Say for each stump and classify based on the largest sum for each class
+    Decision Tree with numeric value
+        -when spliting numeric value data, first sort each value in decreasing order, then calculate the mean between
+            values. Then calculate the entropy of each mean as if each mean is a node
+    
+    Gini Index:
+        1 - (prob_of_yes)^2 - (prob_of_no)^2
+        then take the weighted sums of the two sides
