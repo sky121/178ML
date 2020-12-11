@@ -1,4 +1,4 @@
 1. Stacked Esemble
 2. Better weights for each learner
-3. Analyze parameters of each learner
+3. Analyze parameters of each learner (Tune better hyper parameters)
 4. 
