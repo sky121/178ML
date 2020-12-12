@@ -4,6 +4,11 @@ import matplotlib.pyplot as plt
 from sklearn.ensemble import AdaBoostClassifier, GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
 from mltools import kernel
+from xgboost import XGBClassifier
+
+import sys
+print(sys.path)
+
 
 class RandomForest:
     def __init__(self, X, Y, nFeatures, maxDepth, minLeaf, number_of_learner):
